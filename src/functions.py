@@ -16,3 +16,9 @@ def rplace_col_values(dict, df, col):
     for key, value in dict.items():
         if key in df[col].values:
             df[col].replace(df[df[col] == key][col].values[0], value, inplace = True)
+
+# Defining a function to extract certain column/s from one df in a resulted df
+def extract_cols(df, col_names):
+    ''' A function which extracts certain column/s from one df in a resulted df.
+        Column names are provided as list/array of strings. '''
+    return df[col_names]
